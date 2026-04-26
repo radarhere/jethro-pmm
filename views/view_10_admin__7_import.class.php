@@ -126,7 +126,7 @@ class View_Admin__Import extends View
 				<td>
 					<label class="checkbox">
 						<input type="checkbox" name="match_existing" value="1" <?php if (array_get($_REQUEST, 'match_existing', 1)) echo 'checked="checked"';?> data-toggle="enable" data-target="#match-options *"/>
-						Update existing persons (by Person ID if provided, otherwise by names)
+						Update existing persons if they match (by person ID, or first & last names)
 					</label>
 					<div class="indent-left" id="match-options">
 						<label class="checkbox">
@@ -1099,6 +1099,7 @@ class View_Admin__Import extends View
 	public static function getSampleHeader($required_fields_only=FALSE)
 	{
 		$header = Array(
+			'personid',
 			'family_name',
 			'last_name',
 			'first_name',
