@@ -708,7 +708,7 @@ JethroGroupChooser.onPageLoad = function() {
 		var treeContainer = JethroGroupChooser.getTreeContainer(this);
 		if ($(this).hasClass('active')) {
 			$(this).removeClass('active');
-			treeContainer.hide(400);
+			treeContainer.hide(0);
 		} else {
 			$('.custom-treeview-wrapper').hide(400); // close any open ones
 			$('.group-chooser-multi, select.group-chooser').removeClass('active');
@@ -718,7 +718,7 @@ JethroGroupChooser.onPageLoad = function() {
 			treeContainer.css('margin-top', ((parseInt(selectBoxStyle.marginBottom) * -1)+2)+"px");
 			var availableHeight = window.innerHeight - this.getBoundingClientRect().bottom - 10;
 			treeContainer.css('max-height', availableHeight + 'px');
-			treeContainer.show(400, function() {
+			treeContainer.show(0, function() {
 				$(this).find('input[type=text]:visible').focus();
 			});
 			$(document).on('mousedown', function(event) {
